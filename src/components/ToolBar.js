@@ -2,43 +2,48 @@ import React, {
     Component
 } from "react";
 
-// import {
-//     Button,
-//     Card,
-//     Row,
-//     Col
-// } from 'react-materialize';
+//import {Button,Card, Row, Col} from 'react-materialize';
 
 class ToolBar extends Component {
     render() {
-        return ( <
-            div >
+        return (
+
             <
-            nav >
-            <
-            div class = "nav-wrapper" >
-            <
+            div class = "nav-wrapper" > < /div> <
             a href = "#"
-            class = "brand-logo" > Logo < /a> <
+            class = "brand-logo" > Logo < /a>
+
+            <
             ul id = "nav-mobile"
-            class = "right hide-on-med-and-down" >
-            <
-            li > < a href = "sass.html" > Sass < /a></li >
-            <
-            li > < a href = "badges.html" > Components < /a></li >
-            <
-            li > < a href = "collapsible.html" > JavaScript < /a></li >
-            <
-            /ul> < /
-            div >
-
+            class = "right hide-on-med-and-down" > < /ul>
 
             <
-            /nav>
+            li className = "nav-item" > < /li> <
+            Link to = "/"
+            className = {
+                location.pathname === "/" ? "nav-link active" : "nav-link"
+            } >
+            Home <
+            /Link> <
+            Link to = "/"
+            className = {
+                location.pathname === "/" ? "nav-link active" : "nav-link"
+            } >
+            About <
+            /Link> <
+            Link to = "/"
+            className = {
+                location.pathname === "/" ? "nav-link active" : "nav-link"
+            } >
+            Blog <
+            /Link> <
+            Link to = "/"
+            className = {
+                location.pathname === "/" ? "nav-link active" : "nav-link"
+            } >
+            Learn <
+            /Link>
 
-
-            <
-            /div>
         )
     }
 }
