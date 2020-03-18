@@ -1,0 +1,20 @@
+.NavTabs {
+    position: fixed;
+    background: rgba(red, green, blue, alpha);
+    padding: 0px 20px;
+}
+
+section {
+    background-image: url(https://vrl-eu-cdn.wetransfer.net/ivise/eyJwaXBlbGluZSI6W1sic3JnYiIse31dLFsiYXV0b19vcmllbnQiLHt9XSxbImdlb20iLHsiZ2VvbWV0cnlfc3RyaW5nIjoiMjA0OHgyMDQ4In1dLFsiZm9yY2VfanBnX291dCIseyJxdWFsaXR5Ijo4NX1dLFsic2hhcnBlbiIseyJyYWRpdXMiOjAuNzUsInNpZ21hIjowLjV9XV0sInNyY191cmwiOiJzMzovL3dldHJhbnNmZXItZXUtcHJvZC1zcGFjZXNoaXAvczFhY3FoMGE4OWJkanNlMmkyMDIwMDIyMDIzMTQwMy9zdXRocmMzNHpqcXNkcDJ1bjIwMjAwMjIwMjMxNDAzIn0/0cfdd19e3e4dcdcccd0c37a77d5354370c50f5fcf9c268d5103edf51285d3ca7);
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+
+}
+
+.NavTabs li:hover {
+    background-color: red;
+
+}
+
+
