@@ -1,53 +1,73 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
 
-function NavTabs() {
-  // We'll go into the Hooks API later, for now, we are just using some code
-  // from the react-router docs (https://reacttraining.com/react-router/web/api/Hooks/uselocation)
-  // This allows the component to check the route any time the user uses a link to navigate.
-  const location = useLocation();
+import React, { Component } from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
 
-  return (
-    <ul className="nav nav-tabs">
-      <li className="nav-item">
-        <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>
-          Home
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          to="/about"
-          className={location.pathname === "/about" ? "nav-link active" : "nav-link"}
-        >
-          About
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          to="/blog"
-          className={location.pathname === "/blog" ? "nav-link active" : "nav-link"}
-        >
-          Blog
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          to="/contact"
-          className={location.pathname === "/contact" ? "nav-link active" : "nav-link"}
-        >
-          Contact
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          to="/contact/learn"
-          className={location.pathname === "/contact/learn" ? "nav-link active" : "nav-link"}
-        >
-          Learn
-        </Link>
-      </li>
-    </ul>
-  );
-}
+export default class Navbar extends Component {
+  scrollToTop = () => {
+    scroll.scrollToTop();
+  }
+};
 
-export default NavTabs;
+    return (
+      <nav className="nav" id="navbar">
+        <div className="nav-content">
+          
+          <ul className="nav-items">
+            <li className="nav-item">
+              <Link activeClass="active" className= {location.pathname === "/" ? "nav-link active" : "nav-link"}
+                to="Home"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}>
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link  activeClass="active" className= {location.pathname === "/" ? "nav-link active" : "nav-link"}
+                to="About"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}>
+                About
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link activeClass="active" className= {location.pathname === "/" ? "nav-link active" : "nav-link"}            
+                to="Gallery"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}>
+                Gallery
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link activeClass="active" className= {location.pathname === "/" ? "nav-link active" : "nav-link"}
+                to="Contact"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}>
+                Contact
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link  activeClass="active" className= {location.pathname === "/" ? "nav-link active" : "nav-link"}
+                to="Learn"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}>
+                Learn
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav> 
+    );
+  
