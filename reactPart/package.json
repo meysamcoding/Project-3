@@ -1,6 +1,7 @@
 {
   "name": "hak",
   "version": "0.1.0",
+  "description": "An example package to demonstrate Yarn",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
