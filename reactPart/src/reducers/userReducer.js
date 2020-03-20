@@ -22,4 +22,3 @@ import {
   }
   
   export default user
-  

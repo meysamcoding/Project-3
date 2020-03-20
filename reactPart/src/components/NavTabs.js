@@ -1,54 +1,106 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
 
-function NavTabs() {
-  // We'll go into the Hooks API later, for now, we are just using some code
-  // from the react-router docs (https://reacttraining.com/react-router/web/api/Hooks/uselocation)
-  // This allows the component to check the route any time the user uses a link to navigate.
-  const location = useLocation();
+// export default NavTabs;
+import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 
-  return (
-    <ul className="nav nav-tabs">
-      <li className="nav-item">
-        <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>
-          Home
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          to="/about"
-          className={location.pathname === "/about" ? "nav-link active" : "nav-link"}
-        >
-          About
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          to="/blog"
-          className={location.pathname === "/blog" ? "nav-link active" : "nav-link"}
-        >
-          Blog
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          to="/contact"
-          className={location.pathname === "/contact" ? "nav-link active" : "nav-link"}
-        >
-          Sign in
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          to="/learn"
-          className={location.pathname === "/learn" ? "nav-link active" : "nav-link"}
-        >
-          Contact
-        </Link>
-      </li>
-      
-    </ul>
-  );
+import '../../src/App.css'
+
+
+
+
+
+import axios from 'axios'
+
+class NavTabs extends Component {
+  constructor() {
+    super()
+    this.logout = this.logout.bind(this)
+
+
+  }
+
+
+  logout(event) {
+    event.preventDefault()
+    console.log('logging out')
+    axios.post('/user/logout').then(response => {
+      console.log(response.data)
+      if (response.status === 200) {
+        this.props.updateUser({
+          loggedIn: false,
+          username: null
+        })
+      }
+    }).catch(error => {
+      console.log('Logout error')
+    })
+  }
+
+  render() {
+    const loggedIn = this.props.loggedIn;
+    console.log('navbar render, props: ')
+    console.log(this.props);
+
+    return (
+      <div>
+
+        <header className="App-1 " >
+          <div className="nav-items" >
+            {loggedIn ? (
+              <section className="nav-items">
+                <Link to="#" className="nav-items" onClick={this.logout}>
+                  <span className="text-secondary">logout</span></Link>
+
+              </section>
+            ) : (
+                <ul className="nav-items">
+
+                  <li className="  nav-content  "
+                  >
+                    <Link to="/"  >
+                      <span className="nav-items">home</span>
+                    </Link>
+                  </li>
+                  <li className="  nav-content  "
+                  >
+                    <Link to="/about" >
+                      <span className="  nav-items">About us</span>
+                    </Link>
+                  </li>
+                  <li className="  nav-content  "
+                  >
+                    <Link to="/blog" >
+                      <span className="  nav-items">Blog</span>
+                    </Link>
+                  </li>
+                  <li className="  nav-content  "
+                  >
+                    <Link to="/learn" >
+                      <span className="  nav-items">Contact us</span>
+                    </Link>
+                  </li>
+                  <li className="  nav-content  ">
+                    <Link to="/login" >
+                      <span className="  nav-items">login</span>
+                    </Link>
+                  </li>
+
+                  <li className="  nav-content  ">
+                    <Link to="/sign" >
+                      <span className="  nav-items">sign up</span>
+                    </Link>
+                  </li>
+                </ul>
+              )}
+          </div>
+
+        </header>
+      </div>
+
+    );
+
+  }
 }
 
-export default NavTabs;
+export default NavTabs

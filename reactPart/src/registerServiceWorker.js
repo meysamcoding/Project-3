@@ -96,4 +96,3 @@ const isLocalhost = Boolean(
       });
     }
   }
-  
