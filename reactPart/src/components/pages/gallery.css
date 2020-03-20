@@ -1,6 +1,9 @@
 /* CSS for the Gallery page */
 
-.gallerybox {
+.responsive-img {
     margin-right: auto;
     margin-left: auto;
+}
+.gallerybox {
+    background-color: lightblue;
 }
