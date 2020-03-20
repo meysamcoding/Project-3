@@ -70,8 +70,8 @@ class NavTabs extends Component {
                   </li>
                   <li className="  nav-content  "
                   >
-                    <Link to="/blog" >
-                      <span className="  nav-items">Blog</span>
+                    <Link to="/gallery" >
+                      <span className="  nav-items">gallery</span>
                     </Link>
                   </li>
                   <li className="  nav-content  "
