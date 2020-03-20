@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route,Link } from "react-router-dom";
 import NavTabs from "./components/NavTabs";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
-import Blog from "./components/pages/Blog";
+import Gallery from "./components/pages/Gallery";
 import Contact from "./components/pages/Contact";
 import Learn from "./components/pages/Learn";
 import sign from "./components/pages/sign-up";
@@ -59,7 +59,7 @@ class App extends Component {
         <NavTabs />
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/blog" component={Blog} />
+        <Route exact path="/gallery" component={Gallery} />
         <Route path="/contact" component={Contact} />
         <Route path="/Learn" component={Learn} />
         <Route path="/sign" component={sign} />
